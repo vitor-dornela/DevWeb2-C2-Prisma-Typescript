@@ -1,6 +1,4 @@
 import { prisma } from "@/lib/db"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -38,25 +36,21 @@ export default async function Home() {
   const [users, posts] = await Promise.all([getUsers(), getPosts()])
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8">Prisma + TypeScript + Vercel Demo</h1>
+    <div className="container mx-auto p-6 max-w-6xl">
+      <h1 className="text-3xl font-bold mb-8 text-center">Prisma + TypeScript + Vercel Demo</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Users ({users.length})</h2>
           <div className="space-y-4">
             {users.map((user) => (
-              <Card key={user.id}>
-                <CardHeader>
-                  <CardTitle>{user.name || "Anonymous"}</CardTitle>
-                  <CardDescription>{user.email}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Badge variant="secondary">
-                    {user.posts.length} post{user.posts.length !== 1 ? "s" : ""}
-                  </Badge>
-                </CardContent>
-              </Card>
+              <div key={user.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-lg">{user.name || "Anonymous"}</h3>
+                <p className="text-gray-600 text-sm">{user.email}</p>
+                <span className="inline-block mt-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                  {user.posts.length} post{user.posts.length !== 1 ? "s" : ""}
+                </span>
+              </div>
             ))}
           </div>
         </div>
@@ -65,20 +59,16 @@ export default async function Home() {
           <h2 className="text-2xl font-semibold mb-4">Posts ({posts.length})</h2>
           <div className="space-y-4">
             {posts.map((post) => (
-              <Card key={post.id}>
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    {post.title}
-                    {post.published && <Badge>Published</Badge>}
-                  </CardTitle>
-                  <CardDescription>by {post.author.name || post.author.email}</CardDescription>
-                </CardHeader>
-                {post.content && (
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{post.content}</p>
-                  </CardContent>
-                )}
-              </Card>
+              <div key={post.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-semibold text-lg">{post.title}</h3>
+                  {post.published && (
+                    <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Published</span>
+                  )}
+                </div>
+                <p className="text-gray-600 text-sm mb-2">by {post.author.name || post.author.email}</p>
+                {post.content && <p className="text-gray-700 text-sm">{post.content}</p>}
+              </div>
             ))}
           </div>
         </div>
