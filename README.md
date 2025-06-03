@@ -35,7 +35,7 @@ Esta é uma aplicação web moderna desenvolvida como demonstração de uma stac
 
 ## 🏗️ Arquitetura do Projeto
 
-\`\`\`
+```
 c2-web2/
 ├── 📁 app/                    # App Router do Next.js
 │   ├── 📁 api/               # API Routes
@@ -51,12 +51,12 @@ c2-web2/
 ├── 📄 package.json           # Dependências do projeto
 ├── 📄 vercel.json            # Configurações do Vercel
 └── 📄 README.md              # Este arquivo
-\`\`\`
+```
 
 ## 🗄️ Modelo de Dados
 
 ### Usuário (User)
-\`\`\`typescript
+```typescript
 {
   id: string        // ID único
   email: string     // Email único
@@ -65,10 +65,10 @@ c2-web2/
   updatedAt: Date   // Data de atualização
   posts: Post[]     // Posts do usuário
 }
-\`\`\`
+```
 
 ### Post
-\`\`\`typescript
+```typescript
 {
   id: string        // ID único
   title: string     // Título do post
@@ -79,7 +79,7 @@ c2-web2/
   createdAt: Date   // Data de criação
   updatedAt: Date   // Data de atualização
 }
-\`\`\`
+```
 
 ## 🚀 Como Executar Localmente
 
@@ -91,24 +91,24 @@ c2-web2/
 ### Passo a passo
 
 1. **Clone o repositório**
-\`\`\`bash
+```bash
 git clone https://github.com/seu-usuario/c2-web2.git
 cd c2-web2
-\`\`\`
+```
 
 2. **Instale as dependências**
-\`\`\`bash
+```bash
 npm install --legacy-peer-deps
-\`\`\`
+```
 
 3. **Configure as variáveis de ambiente**
-\`\`\`bash
+```bash
 # Crie um arquivo .env.local
 echo "DATABASE_URL=sua_url_do_neon_aqui" > .env.local
-\`\`\`
+```
 
 4. **Configure o banco de dados**
-\`\`\`bash
+```bash
 # Gere o cliente Prisma
 npx prisma generate
 
@@ -117,17 +117,17 @@ npx prisma db push
 
 # Popule o banco com dados de exemplo
 npx prisma db seed
-\`\`\`
+```
 
 5. **Execute o projeto**
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 6. **Acesse a aplicação**
-\`\`\`
+```
 http://localhost:3000
-\`\`\`
+```
 
 ## 📡 Endpoints da API
 
@@ -138,7 +138,7 @@ http://localhost:3000
 - `GET /api/posts` - Lista todos os posts com informações do autor
 
 ### Exemplo de Resposta
-\`\`\`json
+```json
 {
   "id": "user_123",
   "email": "usuario@exemplo.com",
@@ -157,7 +157,7 @@ http://localhost:3000
     }
   ]
 }
-\`\`\`
+```
 
 ## 🌐 Deploy
 
@@ -172,12 +172,12 @@ A aplicação está automaticamente configurada para deploy no Vercel:
 
 ## 🔧 Scripts Disponíveis
 
-\`\`\`bash
+```bash
 npm run dev          # Executa em modo desenvolvimento
 npm run build        # Gera build de produção
 npm run start        # Executa build de produção
 npm run lint         # Executa linting do código
-\`\`\`
+```
 
 ## 📈 Próximos Passos
 
