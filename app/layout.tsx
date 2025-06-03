@@ -1,12 +1,4 @@
-import type { Metadata } from 'next'
-import './globals.css'
-
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
-}
-
+import type React from "react"
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,3 +10,10 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+import './globals.css'
+
+export const metadata = {
+      generator: 'v0.dev'
+    };
