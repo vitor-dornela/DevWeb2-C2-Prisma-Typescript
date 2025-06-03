@@ -37,7 +37,7 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto p-6 max-w-6xl">
-      <h1 className="text-3xl font-bold mb-8 text-center">Prisma + TypeScript + Vercel Demo</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Aplicação Prisma + TypeScript + Vercel</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
