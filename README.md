@@ -168,7 +168,7 @@ A aplicação está automaticamente configurada para deploy no Vercel:
 3. **Variáveis de ambiente** - Configuradas automaticamente via integração Neon
 
 ### URL de Produção
-🔗 **[https://c2-web2.vercel.app](https://c2-web2.vercel.app)**
+🔗 **[https://c2-web2-vitor-dornela.vercel.app/](https://c2-web2-vitor-dornela.vercel.app/)**
 
 ## 🔧 Scripts Disponíveis
 
