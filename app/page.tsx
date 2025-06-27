@@ -204,13 +204,23 @@ export default function Home() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Gerenciamento de Usuários e Posts</h1>
-          <p className="text-gray-600">Crie, edite e exclua usuários e posts</p>
+          <p className="text-gray-600">Crie e exclua usuários e posts</p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="users">Usuários ({users.length})</TabsTrigger>
-            <TabsTrigger value="posts">Posts ({posts.length})</TabsTrigger>
+            <TabsTrigger 
+              value="users"
+              className="data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border data-[state=inactive]:border-gray-300"
+            >
+              Usuários ({users.length})
+            </TabsTrigger>
+            <TabsTrigger 
+              value="posts"
+              className="data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border data-[state=inactive]:border-gray-300"
+            >
+              Posts ({posts.length})
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="users" className="space-y-6">
